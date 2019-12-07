@@ -1,0 +1,9 @@
+Chevrolet Corsa
+Chevrolet Chevy
+Peugot 1324
+
+catAutomoviles, catMarcas
+
+SELECT IdAutomovil, m.Marca + ' ' + a.Modelo as Modelo
+FROM catMarcas m, catAutomovil a
+WHERE m.IdMarca=a.IdMarca and a.Activo=1

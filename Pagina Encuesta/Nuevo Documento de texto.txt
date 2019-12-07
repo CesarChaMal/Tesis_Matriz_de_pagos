@@ -1,0 +1,16 @@
+select * from catMotivos
+insert into catMotivos(Descripcion,Activo) values ('Familiar',1) 
+select * from catMotivos
+select @@identity
+
+
+SELECT     Encuesta.IdEncuesta, Encuesta.IdAutomovil, catAutomovil.IdMarca, catAutomovil.Modelo, catMarcas.Marca
+FROM         Encuesta INNER JOIN
+                      catAutomovil ON Encuesta.IdAutomovil = catAutomovil.IdAutomovil INNER JOIN
+                      catMarcas ON catAutomovil.IdMarca = catMarcas.IdMarca
+WHERE     (Encuesta.IdAutomovil = 1)
+
+IdEncuesta	IdAutomovil	IdMarca		Modelo		Marca
+1		1		1		Cesar1		Cesar
+7		1		1		Cesar1		Cesar
+				

@@ -1,0 +1,79 @@
+// validando el modelo y la marca del auto con el que comparaste (Que sean diferentes)
+			carOrden1=f.comComparaOrden1.options[f.comComparaOrden1.selectedIndex].value;
+			carOrden2=f.comComparaOrden2.options[f.comComparaOrden2.selectedIndex].value;
+			carOrden3=f.comComparaOrden3.options[f.comComparaOrden3.selectedIndex].value;
+			carOrden4=f.comComparaOrden4.options[f.comComparaOrden4.selectedIndex].value;
+			carOrden5=f.comComparaOrden5.options[f.comComparaOrden5.selectedIndex].value;
+			
+			if (carOrden1!=0 && carOrden2!=0 && carOrden3!=0 && carOrden4!=0 && carOrden5!=0){
+
+				if (carOrden1!=carOrden2){
+					if (carOrden1!=carOrden3){
+						if (carOrden1!=carOrden4){
+							if (carOrden1!=carOrden5){
+								Diferentes=1
+								Iguales=0
+							}else{
+								Diferentes=0
+								Iguales=1
+							}
+						}else{
+							Diferentes=0
+							Iguales=1
+						}
+					}else{
+						Diferentes=0
+						Iguales=1
+					}
+				}else{
+					Diferentes=0
+					Iguales=1
+				}
+	
+				if (carOrden2!=carOrden3 && Iguales==0){
+					if (carOrden2!=carOrden4){
+						if (carOrden2!=carOrden5){
+							Diferentes=1
+							Iguales=0
+						}else{
+							Diferentes=0
+							Iguales=1
+						}
+					}else{
+						Diferentes=0
+						Iguales=1
+					}
+				}else{
+					Diferentes=0
+					Iguales=1
+				}
+	
+				if (carOrden3!=carOrden4 && Iguales==0){
+					if (carOrden3!=carOrden5){
+						Diferentes=1
+						Iguales=0
+					}else{
+						Diferentes=0
+						Iguales=1
+					}
+				}else{
+					Diferentes=0
+					Iguales=1
+				}
+	
+				if (carOrden4!=carOrden5 && Iguales==0){
+					Diferentes=1
+					Iguales=0
+				}else{
+					Diferentes=0
+					Iguales=1
+				}
+
+			}else{//else de ( if (carOrden1!=0 && carOrden2!=0 && carOrden3!=0 && carOrden4!=0 && carOrden5!=0) )
+				a+="\nDebe seleccionar al menos un automovil con el que comparo el automovil comprado";
+			}
+
+			if(Diferentes==1)
+				a+="";
+			if(Iguales==1)
+				a+="\nDebe Seleccionar Diferentes Automoviles";

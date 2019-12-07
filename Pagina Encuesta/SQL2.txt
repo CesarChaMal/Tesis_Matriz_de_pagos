@@ -1,0 +1,49 @@
+CREATE TABLE [detFichaTecnica] (
+	[idFicha] [int] NOT NULL ,
+	[idCaracteristica] [int] NOT NULL ,
+	[Valor] [real] NOT NULL ,
+	CONSTRAINT [IX_detFichaTecnica] UNIQUE  NONCLUSTERED 
+	(
+		[idFicha],
+		[idCaracteristica]
+	)  ON [PRIMARY] ,
+	CONSTRAINT [FK_detFichaTecnica_catCaracteristicas] FOREIGN KEY 
+	(
+		[idCaracteristica]
+	) REFERENCES [catCaracteristicas] (
+		[IdCaracteristica]
+	),
+	CONSTRAINT [FK_detFichaTecnica_FichaTecnica] FOREIGN KEY 
+	(
+		[idFicha]
+	) REFERENCES [FichaTecnica] (
+		[IdFicha]
+	)
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[detFichaTecnica] ADD CONSTRAINT [IX_detFichaTecnica] UNIQUE  NONCLUSTERED 
+	(
+		[idFicha],
+		[idCaracteristica]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[detFichaTecnica] ADD CONSTRAINT [FK_detFichaTecnica_FichaTecnica] FOREIGN KEY 
+	(
+		[idFicha]
+	) REFERENCES [FichaTecnica] (
+		[IdFicha]
+	)
+GO
+ALTER TABLE [dbo].[detFichaTecnica] ADD CONSTRAINT [FK_detFichaTecnica_catCaracteristicas] FOREIGN KEY 
+	(
+		[idCaracteristica]
+	) REFERENCES [catCaracteristicas] (
+		[IdCaracteristica]
+	)
+GO
+
+
+
+

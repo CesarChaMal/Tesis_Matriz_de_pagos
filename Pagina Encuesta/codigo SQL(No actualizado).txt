@@ -1,0 +1,131 @@
+CREATE TABLE catMarcas (
+	IdMarca tinyint IDENTITY (1, 1) NOT NULL ,
+	Marca] varchar (30) NOT NULL ,
+	Activo bit NOT NULL 
+)
+
+CREATE TABLE catAutomovil(
+	IdAutomovil smallint IDENTITY (1, 1) NOT NULL ,
+	IdMarca tinyint NOT NULL ,
+	Modelo varchar] (30) NOT NULL ,
+	Activo bit NOT NULL 
+)
+
+CREATE TABLE [dbo].[catComoSupo] (
+	[IdComoSupo] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (50) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[catEntrevistadores] (
+	[IdEntrevistador] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (50) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[catEstadoCivil] (
+	[IdEstadoCivil] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (30) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[catLugares] (
+	[IdLugar] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (50) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+
+CREATE TABLE [dbo].[catMedioPago] (
+	[IdMedioPago] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (30) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[catMotivos] (
+	[IdMotivo] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (30) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[catPuntosAdquisicion] (
+	[IdPunto] [smallint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (30) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[catUsoPrimario] (
+	[IdUsoPrimario] [tinyint] IDENTITY (1, 1) NOT NULL ,
+	[Descripcion] [varchar] (30) COLLATE Modern_Spanish_CI_AS NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Encuesta] (
+	[IdEncuesta] [int] IDENTITY (1, 1) NOT NULL ,
+	[Compra4Anios] [bit] NOT NULL ,
+	[Fecha] [datetime] NOT NULL ,
+	[TiempoDeCompra] [tinyint] NOT NULL ,
+	[IdMotivo] [tinyint] NOT NULL ,
+	[Nuevo] [bit] NOT NULL ,
+	[IdMedioPago] [tinyint] NOT NULL ,
+	[IdAutomovil] [smallint] NOT NULL ,
+	[Costo] [float] NOT NULL ,
+	[Seguro] [bit] NOT NULL ,
+	[InfluenciaVendedor] [bit] NOT NULL ,
+	[IdComoSupo] [tinyint] NOT NULL ,
+	[IdUsoPrimario] [tinyint] NOT NULL ,
+	[RangoEdad] [tinyint] NOT NULL ,
+	[IdEstadoCivil] [tinyint] NOT NULL ,
+	[Sexo] [bit] NOT NULL ,
+	[IdLugar] [tinyint] NOT NULL ,
+	[FechaEncuesta] [datetime] NOT NULL ,
+	[IdEntrevistador] [tinyint] NOT NULL ,
+	[Activo] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[PuntoAdquisicion] (
+	[IdEncuesta] [int] NOT NULL ,
+	[IdPunto] [smallint] NOT NULL ,
+	[Orden] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[ComparacionAutomovil] (
+	[IdAutomovil] [smallint] NOT NULL ,
+	[IdEncuesta] [int] NOT NULL ,
+	[Orden] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE Encuesta(
+	IdEncuesta int NOT NULL IDENTITY(1,1) PRIMARY KEY CLUSTERED,
+	Compra4Anios bit NOT NULL,
+	Fecha datetime NOT NULL,
+	TiempoDeCompra tinyint NOT NULL, 
+	IdMotivo smallint NOT NULL FOREIGN KEY REFERENCES catMotivos(idMotivo),
+	NuevoUsado bit NOT NULL, 
+	IdMedioPago smallint NOT NULL FOREIGN KEY REFERENCES MedioPago(idMedioPago),
+	IdAutomovil smallint NOT NULL FOREIGN KEY REFERENCES catAutomovil(IdAutomovil),
+	Costo float NOT NULL,
+	Seguro bit NOT NULL,
+	IdComparacionAutomovil smallint NOT NULL FOREIGN KEY REFERENCES ComparacionAutomovil(IdComparacionAutomovil),
+	IdPunto smallint NOT NULL FOREIGN KEY REFERENCES catPuntosAdquisicion(idPunto),
+	Vendedor bit NOT NULL,
+	IdComoSupo smallint NOT NULL FOREIGN KEY REFERENCES catComoSupo(IdComoSupo),
+	IdUsoPrimario smallint NOT NULL FOREIGN KEY REFERENCES catUsoPrimario(IdUsoPrimario),
+	IdRangoEdad smallint NOT NULL FOREIGN KEY REFERENCES catRangoEdad(IdRangoEdad),
+	IdEstadoCivil smallint NOT NULL FOREIGN KEY REFERENCES catEstadoCivil(IdEstadoCivil),
+	IdSexo smallint NOT NULL FOREIGN KEY REFERENCES catSexo(IdSexo),
+	Lugar varchar(50) NOT NULL,
+	FechaEncuesta datetime NOT NULL,
+	Entrevistador varchar(50) NOT NULL
+)

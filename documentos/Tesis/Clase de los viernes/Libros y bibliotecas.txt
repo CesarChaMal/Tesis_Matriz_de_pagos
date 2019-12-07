@@ -1,0 +1,66 @@
+Libros y sus bibliotecas.
+
+
+----------------------------------------------------------------------------------------
+
+No. bib  22251
+ 
+
+20 ISBN  8420620084
+ 
+  Clasificación LC  QA 269 .D3818 1977 
+  Autor  Davis, Morton D. 
+  Título  Teoría de juegos : una introducción no técnica / Morton D. Davis. 
+  Edición  2a ed.
+ 
+  Pie de imprenta  Madrid : Alianza , 1977 
+  Descripción  215 p.
+ 
+  Serie  (Alianza universidad ;) 
+  Nota de versión original  T. original: Game theory, a non technical introduction
+ 
+  Materia  Teoría de los juegos 
+  Biblioteca  INGE QA 269 .D3818 1977
+
+----------------------------------------------------------------------------------------
+
+No. bib  30117
+ 
+
+15 Clasificación LC  QA 269 .V4618 
+  Autor  Véntsel, Elena Sergeevna. 
+  Título  Elementos de la teoría de los juegos/ E. S. Véntsel.. 
+  Pie de imprenta  Moscú : Mir, 1977. 
+  Descripción  70 p. : il.
+ 
+  Serie  (Lecciones populares de matemáticas) 
+  Materia  Teoría de los juegos 
+  Título Relacionado  t.: Teoría de los juegos.
+ 
+  Biblioteca  INGE QA 269 .V4618
+ 
+
+---------------------------------------------------------------------------------------
+
+No. bib  92540
+ 
+
+7 ISBN  8420679054
+ 
+  Clasificación LC  QA 269 .D3618 
+  Autor  Davis, Morton D. 
+  Título  Introducción a la teoría de juegos/ Morton D. Davis.. 
+  Pie de imprenta  Madrid : Alianza Editorial, 1998. 
+  Descripción  250 p.
+ 
+  Serie  (El libro universitario. Herramientas. Arte y Música ;) 
+  Materia  Teoría de los juegos 
+  Biblioteca  CIRS 0004911 QA 269 .D3618
+ 
+INGE 0013004 QA 269 .D3618
+ 
+--------------------------------------------------------------------------------------
+ 
+   
+
+
